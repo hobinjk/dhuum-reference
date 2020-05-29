@@ -35,6 +35,11 @@ td {
   color: #999;
 }
 
+.highlight-green-one .green-one,
+.highlight-green-two .green-two,
+.highlight-green-three .green-three {
+  background: #dfd;
+}
 </style>
 
 <h1>6:25, 5:05, 3:45, 2:25, 1:05</h1>
@@ -49,97 +54,97 @@ td {
     <th>Marker</td>
     <th>Player</td>
     </tr>
-    <tr>
+    <tr class="green-one">
     <td>9:30</td>
     <td>Arrow</td>
     <td>1</td>
     </tr>
-    <tr>
+    <tr class="green-two">
     <td>9:00</td>
     <td>Circle</td>
     <td>2</td>
     </tr>
-    <tr>
+    <tr class="green-three">
     <td>8:30</td>
     <td>Heart</td>
     <td>3</td>
     </tr>
-    <tr>
+    <tr class="green-one">
     <td>8:00</td>
     <td>Square</td>
     <td>1</td>
     </tr>
-    <tr>
+    <tr class="green-two">
     <td>7:30</td>
     <td>Star</td>
     <td>2</td>
     </tr>
-    <tr>
+    <tr class="green-three">
     <td>7:00</td>
     <td>Spiral</td>
     <td>3</td>
     </tr>
-    <tr>
+    <tr class="green-one">
     <td>6:30</td>
     <td>Triangle</td>
     <td>1</td>
     </tr>
-    <tr>
+    <tr class="green-two">
     <td>6:00</td>
     <td>Arrow</td>
     <td>2</td>
     </tr>
-    <tr>
+    <tr class="green-three">
     <td>5:30</td>
     <td>Circle</td>
     <td>3</td>
     </tr>
-    <tr>
+    <tr class="green-one">
     <td><strong>5:00</strong></td>
     <td><strong>Heart</strong></td>
     <td><strong>1</strong></td>
     </tr>
-    <tr>
+    <tr class="green-two">
     <td>4:30</td>
     <td>Square</td>
     <td>2</td>
     </tr>
-    <tr>
+    <tr class="green-three">
     <td>4:00</td>
     <td>Star</td>
     <td>3</td>
     </tr>
-    <tr>
+    <tr class="green-one">
     <td>3:30</td>
     <td>Spiral</td>
     <td>1</td>
     </tr>
-    <tr>
+    <tr class="green-two">
     <td>3:00</td>
     <td>Triangle</td>
     <td>2</td>
     </tr>
-    <tr>
+    <tr class="green-three">
     <td>2:30</td>
     <td>Arrow</td>
     <td>3</td>
     </tr>
-    <tr>
+    <tr class="green-one">
     <td>2:00</td>
     <td>Circle</td>
     <td>1</td>
     </tr>
-    <tr>
+    <tr class="green-two">
     <td>1:30</td>
     <td>Heart</td>
     <td>2</td>
     </tr>
-    <tr>
+    <tr class="green-three">
     <td><strong>1:00</strong></td>
     <td><strong>Square</strong></td>
     <td><strong>3</strong></td>
     </tr>
-    <tr>
+    <tr class="green-one">
     <td>0:30</td>
     <td>Star</td>
     <td>1</td>
@@ -152,3 +157,34 @@ td {
   </div>
   <p class="attribution">All timing info from the <a href="https://wiki.guildwars2.com/wiki/Main_Page">wiki</a></p>
 </div>
+
+<script>
+let greensTable = document.querySelector('table');
+
+function clearHighlight() {
+  greensTable.classList.remove('highlight-green-one');
+  greensTable.classList.remove('highlight-green-two');
+  greensTable.classList.remove('highlight-green-three');
+}
+
+document.querySelectorAll('.green-one').forEach(elt => {
+  elt.addEventListener('click', () => {
+    clearHighlight();
+    greensTable.classList.add('highlight-green-one');
+  });
+});
+
+document.querySelectorAll('.green-two').forEach(elt => {
+  elt.addEventListener('click', () => {
+    clearHighlight();
+    greensTable.classList.add('highlight-green-two');
+  });
+});
+
+document.querySelectorAll('.green-three').forEach(elt => {
+  elt.addEventListener('click', () => {
+    clearHighlight();
+    greensTable.classList.add('highlight-green-three');
+  });
+});
+</script>
